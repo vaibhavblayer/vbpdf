@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "vbpdf"
-version = "0.1.5"
-description = "Added as github repository."
+version = "0.1.6"
+description = "Added addbg for adding background image to png."
 authors = ["vaibhavblayer <vaibhavblayer@gmail.com>"]
 readme = "README.md"
 homepage = "https://github.com/vaibhavblayer/vbpdf"

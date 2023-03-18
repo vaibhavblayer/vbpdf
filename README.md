@@ -19,7 +19,7 @@ Commands:
   overlay  Annotates any pdf file.
   split    Splits any pdf file.
   topng    Converts pdf pages into pngs
-
+  addbg	   Adds background to pngs.
 ```
 
 ```sh
