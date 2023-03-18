@@ -1,9 +1,12 @@
 [tool.poetry]
 name = "vbpdf"
-version = "0.1.4"
-description = "Added topng to convert pdf to png file."
+version = "0.1.5"
+description = "Added as github repository."
 authors = ["vaibhavblayer <vaibhavblayer@gmail.com>"]
 readme = "README.md"
+homepage = "https://github.com/vaibhavblayer/vbpdf"
+repository = "https://github.com/vaibhavblayer/vbpdf"
+keywords = ["split pdf", "annotate pdf", "pdftopng", "png", "pdf"]
 
 [tool.poetry.scripts]
 vbpdf = "vbpdf.main:main"
