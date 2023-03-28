@@ -40,6 +40,7 @@ from PIL import Image, ImageFilter
         help="Opacity of bluredimage"
         )
 def blur(inputimage, outputimage, radius, opacity):
+    inputfile = inputimage
     inputimage = Image.open(inputimage)
     bluredimage = inputimage.filter(ImageFilter.GaussianBlur(radius))
 
@@ -49,9 +50,9 @@ def blur(inputimage, outputimage, radius, opacity):
         newData.append((item[0], item[1], item[2], int(opacity*item[3])))
 
     bluredimage.putdata(newData)
-    
+
     bluredimage.save(outputimage, format="png")
-    click.echo(f'{inputimage} is blured to radius {radius} as {outputimage}.')
+    click.secho(f'\t{inputfile} is blured with [radius: {radius}, opacity: {opacity}] -> {outputimage}', fg='bright_red')
 
 
 

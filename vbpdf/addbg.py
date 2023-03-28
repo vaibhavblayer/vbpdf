@@ -42,7 +42,10 @@ def addbg(image, background, outputfile):
     background.paste(frontImage, (width, height), frontImage)
     background.save(outputfile, format="png")
 
-    click.echo(f'{image} is overlayed on top of the background.')
+    click.echo(
+            f'\t{os.path.basename(image)} is stacked on {os.path.basename(background)} -> {os.path.basename(outputfile)}',
+            fg='bright_green'
+            )
 
 #    with click.progressbar([1, 2, 3]) as bar:
 #        for x in bar:
