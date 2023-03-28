@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "vbpdf"
-version = "0.1.6"
-description = "Added addbg for adding background image to png."
+version = "0.1.19"
+description = "Added instagram for collectively doing topng, blur, stack, and addbg."
 authors = ["vaibhavblayer <vaibhavblayer@gmail.com>"]
 readme = "README.md"
 homepage = "https://github.com/vaibhavblayer/vbpdf"

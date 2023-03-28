@@ -31,7 +31,15 @@ bg_path = "/Users/vaibhavblayer/10xphysics/backgrounds/bg_instagram.jpg"
         show_default=True,
         help="Output file name"
         )
-def addbg(image, background, outputfile):
+@click.option(
+        '-p',
+        '--position',
+        type=click.Tuple([int, int]),
+        default=(0, 0),
+        show_default=True,
+        help="Position of the frontImage wrt center."
+        )
+def stack(image, background, outputfile, position):
     background = Image.open(background)
     frontImage = Image.open(image)
     frontImage = frontImage.convert("RGBA")
@@ -39,7 +47,7 @@ def addbg(image, background, outputfile):
     background = background.resize((frontImage.width, frontImage.height))
     width = (background.width - frontImage.width) // 2
     height = (background.height - frontImage.height) // 2
-    background.paste(frontImage, (width, height), frontImage)
+    background.paste(frontImage, (width+position[0], height+position[1]), frontImage)
     background.save(outputfile, format="png")
 
     click.echo(f'{image} is overlayed on top of the background.')
