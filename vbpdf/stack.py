@@ -50,7 +50,10 @@ def stack(image, background, outputfile, position):
     background.paste(frontImage, (width+position[0], height+position[1]), frontImage)
     background.save(outputfile, format="png")
 
-    click.echo(f'{image} is overlayed on top of the background.')
+    click.secho(
+            f'\t{frontImage.filename} is stacked on {background.basename}[position: {position}]  -> {os.path.basename(outputfile)}',
+            fg='bright_green'
+            )
 
 #    with click.progressbar([1, 2, 3]) as bar:
 #        for x in bar:

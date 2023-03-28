@@ -42,8 +42,8 @@ def addbg(image, background, outputfile):
     background.paste(frontImage, (width, height), frontImage)
     background.save(outputfile, format="png")
 
-    click.echo(
-            f'\t{os.path.basename(image)} is stacked on {os.path.basename(background)} -> {os.path.basename(outputfile)}',
+    click.secho(
+            f'\t{image.filename} is stacked on {background.filename} -> {os.path.basename(outputfile)}',
             fg='bright_green'
             )
 
