@@ -32,6 +32,7 @@ bg_path = "/Users/vaibhavblayer/10xphysics/backgrounds/bg_instagram.jpg"
         help="Output file name"
         )
 def addbg(image, background, outputfile):
+    bg = background
     background = Image.open(background)
     frontImage = Image.open(image)
     frontImage = frontImage.convert("RGBA")
@@ -43,8 +44,8 @@ def addbg(image, background, outputfile):
     background.save(outputfile, format="png")
 
     click.secho(
-            f'\t{image.filename} is stacked on {background.filename} -> {os.path.basename(outputfile)}',
-            fg='bright_green'
+            f'\t{os.path.basename(image)} is stacked on {os.path.basename(bg)} -> {os.path.basename(outputfile)}',
+            #fg='bright_green'
             )
 
 #    with click.progressbar([1, 2, 3]) as bar:

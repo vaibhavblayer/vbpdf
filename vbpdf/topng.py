@@ -78,10 +78,10 @@ def topng(inputfile, outputfile, dpi, transparent, ranges, pages):
         print(f'Total number of pages is {n_pages}')
     else:
         console = Console(width=50)
-        with console.status("Processing ...", spinner="pong"):
+        with console.status("Processing ...", spinner="dots"):
             extract_png_pdf(**mydict)
         time_finish = int(time.strftime('%s'))
-        print(f'Took {time_finish - time_init} seconds to do it')
+        #print(f'Took {time_finish - time_init} seconds to do it')
 
 
 

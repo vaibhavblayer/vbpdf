@@ -40,6 +40,7 @@ bg_path = "/Users/vaibhavblayer/10xphysics/backgrounds/bg_instagram.jpg"
         help="Position of the frontImage wrt center."
         )
 def stack(image, background, outputfile, position):
+    bg = background
     background = Image.open(background)
     frontImage = Image.open(image)
     frontImage = frontImage.convert("RGBA")
@@ -51,7 +52,7 @@ def stack(image, background, outputfile, position):
     background.save(outputfile, format="png")
 
     click.secho(
-            f'\t{frontImage.filename} is stacked on {background.basename}[position: {position}]  -> {os.path.basename(outputfile)}',
+            f'\t{os.path.basename(image)} is stacked on {os.path.basename(bg)} [position: {position}]  -> {os.path.basename(outputfile)}',
             fg='bright_green'
             )
 

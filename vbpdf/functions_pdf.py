@@ -2,6 +2,8 @@
     Some functions for pdf handlings__
 
 """
+import click
+import os
 
 def pages_pdf(inputfile):
 
@@ -72,5 +74,5 @@ def extract_png_pdf(inputfile, first_page, last_page, outputfile, dpi, transpare
                 'png'
                 )
         pages[i-first_page].save(f'{file_name}', 'PNG')
-        print(f'{inputfile} page {i} -> {file_name}')
+        click.secho(f'\t{os.path.basename(inputfile)} [page {i}] -> {os.path.basename(file_name)}', fg='bright_blue')
 

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "vbpdf"
-version = "0.1.22"
+version = "0.1.29"
 description = "Added little colors and text formatting."
 authors = ["vaibhavblayer <vaibhavblayer@gmail.com>"]
 readme = "README.md"
