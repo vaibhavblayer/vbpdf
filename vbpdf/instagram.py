@@ -73,13 +73,14 @@ def instagram(ctx, inputfile, opacity, dpi, background, ranges, radius):
         os.mkdir('./downloads')
 
     for i in range(ranges[0], ranges[1]+1):
-        ctx.invoke(topng, inputfile=inputfile, ranges=(1, i), transparent=True, dpi=dpi)
+        ctx.invoke(topng, inputfile=inputfile, ranges=(i, i), transparent=True, dpi=dpi)
         
         ctx.invoke(blur, inputimage=f'main-{i}.png', outputimage=f'main-{i}b.png', opacity=opacity, radius=radius)
 
         ctx.invoke(stack, image=f'main-{i}.png', background=f'main-{i}b.png', outputfile=f'main-{i}bs.png', position=(-2, -2))
 
         ctx.invoke(addbg, image=f'main-{i}bs.png', background=background, outputfile=f'./downloads/main-{i}f.png')
-
+        os.remove(f'main-{i}.png')
+        os.remove(f'main-{i}b.png')
         click.secho(f'\n')
 
