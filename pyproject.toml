@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "vbpdf"
-version = "0.1.32"
-description = "Added additional backagroud option as choice."
+version = "0.1.35"
+description = "Changed default opasity to 0.27"
 authors = ["vaibhavblayer <vaibhavblayer@gmail.com>"]
 readme = "README.md"
 homepage = "https://github.com/vaibhavblayer/vbpdf"

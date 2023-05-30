@@ -5,7 +5,6 @@ from PIL import Image
 
 bg_path = "/Users/vaibhavblayer/10xphysics/backgrounds/bg_instagram.jpg"
 
-
 @click.command(
         help="Adds background to any transparent image"
         )

@@ -30,7 +30,7 @@ bg_path = "/Users/vaibhavblayer/10xphysics/backgrounds/bg_instagram.jpg"
         '-o',
         '--opacity',
         type=click.FLOAT,
-        default=0.35,
+        default=0.27,
         show_default=True,
         help="Opacity of blur layer"
         )
@@ -82,5 +82,6 @@ def instagram(ctx, inputfile, opacity, dpi, background, ranges, radius):
         ctx.invoke(addbg, image=f'main-{i}bs.png', background=background, outputfile=f'./downloads/main-{i}f.png')
         os.remove(f'main-{i}.png')
         os.remove(f'main-{i}b.png')
+        os.remove(f'main-{i}bs.png')
         click.secho(f'\n')
 

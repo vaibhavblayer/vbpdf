@@ -6,7 +6,6 @@ from .choice_option import ChoiceOption
 
 
 bg_path = "/Users/vaibhavblayer/10xphysics/backgrounds/bg_instagram.jpg"
-bg_path_parent = "/Users/vaibhavblayer/10xphysics/backgrounds/"
 
 
 @click.command(
@@ -21,10 +20,9 @@ bg_path_parent = "/Users/vaibhavblayer/10xphysics/backgrounds/"
         )
 @click.option(
         '-b', 
-        '--background', 
-        type=click.Choice(['paper_texture', 'pencil_paper']),
-        default='paper_texture',
-        cls=ChoiceOption,
+        '--background',
+        type=click.Path(),
+        default=bg_path,
         help="Background Image"
         )
 @click.option(
@@ -37,7 +35,6 @@ bg_path_parent = "/Users/vaibhavblayer/10xphysics/backgrounds/"
         )
 def addbg(image, background, outputfile):
     bg = background
-    background = os.path.join(bg_path_parent, background)
     background = Image.open(background)
     frontImage = Image.open(image)
     frontImage = frontImage.convert("RGBA")
